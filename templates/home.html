@@ -1,0 +1,414 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+مزون المیرا
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="hero-section">
+
+<div class="hero-overlay">
+
+    <div class="text-center text-white">
+
+        {% comment %} <img src="{% static 'images/logo.png' %}"
+             alt="لوگو مزون"
+             class="hero-logo"> {% endcomment %}
+
+        <h1 class="display-3 fw-bold mt-4">
+            مزون المیرا
+        </h1>
+
+        <p class="lead mt-3 mb-4">
+            خاص‌ترین مدل‌های لباس مجلسی برای درخشش شما
+        </p>
+
+        <a href="{% url 'product_list' %}"
+           class="btn btn-gold btn-lg">
+
+            مشاهده محصولات
+
+        </a>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section class="my-5 py-5">
+
+
+<div class="text-center">
+
+    <h2 class="fw-bold mb-4">
+        درباره مزون ما
+    </h2>
+
+    <p class="text-muted col-lg-8 mx-auto">
+
+        ما مجموعه‌ای از خاص‌ترین لباس‌های مجلسی را برای
+        بانوان خوش‌سلیقه فراهم کرده‌ایم. هدف ما ارائه
+        لباس‌هایی با طراحی منحصر به فرد و کیفیت بالا است.
+
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- FEATURED PRODUCTS -->
+
+<section class="my-5">
+
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2 class="fw-bold">
+        محصولات ویژه
+    </h2>
+
+    <a href="{% url 'product_list' %}"
+       class="btn btn-outline-dark">
+
+        مشاهده همه
+
+    </a>
+
+</div>
+
+<div class="row g-4">
+
+    {% for product in products %}
+
+    <div class="col-md-4 col-lg-4">
+
+        <div class="card featured-card border-0">
+
+            <img src="{{ product.image.url }}"
+                 class="card-img-top"
+                 alt="{{ product.title }}">
+
+            <div class="card-body text-center">
+
+                <h5 class="fw-bold">
+                    {{ product.title }}
+                </h5>
+
+                <p class="price">
+
+                    {{ product.price }}
+
+                    تومان
+
+                </p>
+
+                <a href="{{ product.get_absolute_url }}"
+                   class="btn btn-dark">
+
+                    مشاهده جزئیات
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="my-5 py-5 bg-white rounded-4 shadow-sm">
+
+
+<h2 class="text-center fw-bold mb-5">
+    دسته‌بندی‌ها
+</h2>
+
+<div class="row text-center">
+
+    {% for category in categories %}
+
+    <div class="col-md-3 mb-3">
+
+        <a href="{{ category.get_absolute_url }}"
+           class="category-box text-decoration-none">
+
+            {{ category.title }}
+
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="my-5">
+
+<div class="row text-center">
+
+    <div class="col-md-4">
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                ✨
+            </div>
+
+            <h5>
+                طراحی خاص
+            </h5>
+
+            <p>
+                مدل‌های منحصر به فرد و لوکس
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                👗
+            </div>
+
+            <h5>
+                تنوع بالا
+            </h5>
+
+            <p>
+                مناسب هر سلیقه و مراسم
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                💎
+            </div>
+
+            <h5>
+                کیفیت ممتاز
+            </h5>
+
+            <p>
+                استفاده از بهترین متریال
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+
+<h2 class="fw-bold">
+    آماده انتخاب لباس رویایی خود هستید؟
+</h2>
+
+<p class="mt-3">
+    جدیدترین مدل‌های مزون را مشاهده کنید
+</p>
+
+<a href="{% url 'product_list' %}"
+   class="btn btn-gold btn-lg mt-3">
+
+    مشاهده محصولات
+
+</a>
+
+
+</section>
+
+{% endblock %}
+
+{% block extra_css %}
+
+<style>
+
+.hero-section{
+
+    height:85vh;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,169,106,.15),
+        rgba(17,17,17,1) 70%
+    );
+
+    background-color:#111;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.hero-overlay{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.hero-logo{
+
+    width:250px;
+    max-width:90%;
+
+    filter:drop-shadow(
+        0 10px 20px rgba(0,0,0,.4)
+    );
+
+}
+
+.btn-gold{
+
+    background:#c8a96a;
+    color:white;
+    border:none;
+
+}
+
+.btn-gold:hover{
+
+    background:#b69458;
+    color:white;
+
+}
+
+.featured-card{
+
+    border-radius:20px;
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.featured-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.featured-card img{
+
+    height:450px;
+    object-fit:cover;
+
+}
+
+.price{
+
+    color:#c8a96a;
+    font-weight:bold;
+    font-size:1.2rem;
+
+}
+
+.category-box{
+
+    display:block;
+
+    background:#f8f8f8;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    color:#111;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.category-box:hover{
+
+    background:#111;
+    color:white;
+
+}
+
+.feature-box{
+
+    padding:30px;
+
+}
+
+.feature-icon{
+
+    font-size:2.5rem;
+    margin-bottom:15px;
+
+}
+
+.cta-section{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:80px 30px;
+
+    border-radius:25px;
+
+    margin-top:80px;
+
+}
+
+</style>
+
+{% endblock %}

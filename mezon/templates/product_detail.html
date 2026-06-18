@@ -1,0 +1,181 @@
+{% extends '_base.html' %}
+
+{% block title %}
+{{ product.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="product-box">
+
+
+<div class="row align-items-center">
+
+    <div class="col-lg-6">
+
+        <img src="{{ product.image.url }}"
+             class="main-image"
+             alt="{{ product.title }}">
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <div class="product-info">
+
+            <h1 class="fw-bold">
+                {{ product.title }}
+            </h1>
+
+            <h2 class="price my-4">
+                {{ product.price }} تومان
+            </h2>
+
+            <p class="text-muted">
+                {{ product.description }}
+            </p>
+
+            <hr>
+
+            <h5 class="fw-bold">
+                رنگ‌ها
+            </h5>
+
+            <div class="mb-4">
+
+                {% for color in product.color.all %}
+
+                {% comment %} <span class="color-circle"
+                      style="background:{{ color.name }}">
+                </span> {% endcomment %}
+                {{color.name}}
+
+                {% endfor %}
+
+            </div>
+
+            <h5 class="fw-bold">
+                سایزها
+            </h5>
+
+            <div class="mb-4">
+
+                {% for size in product.size.all %}
+
+                <span class="size-box">
+                    {{ size.size }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+            <h5 class="fw-bold">
+                موجودی
+            </h5>
+
+            {% if product.inventory > 0 %}
+
+                <span class="badge bg-success p-3">
+                    موجود ({{ product.inventory }})
+                </span>
+
+            {% else %}
+
+                <span class="badge bg-danger p-3">
+                    ناموجود
+                </span>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<section class="mt-5">
+
+
+<h3 class="text-center mb-4">
+    محصولات مشابه
+</h3>
+
+<div class="row">
+
+    {% for item in similar_products %}
+
+    <div class="col-md-3">
+
+        <div class="card border-0 shadow-sm">
+
+            <img src="{{ item.image.url }}"
+                 class="card-img-top">
+
+            <div class="card-body text-center">
+
+                <h6>{{ item.name }}</h6>
+
+                <a href="{{ item.get_absolute_url }}"
+                   class="btn btn-dark btn-sm">
+
+                    مشاهده
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+</section>
+
+<style>
+
+.product-box{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.main-image{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+}
+
+.price{
+    color:#c8a96a;
+    font-weight:bold;
+}
+
+.color-circle{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    display:inline-block;
+    margin-left:8px;
+    border:2px solid #ddd;
+}
+
+.size-box{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin:5px;
+}
+
+</style>
+
+{% endblock %}
