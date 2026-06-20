@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Color, Size, Product
+from .models import Category, Color, Size, Product, ProductPicture
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -16,6 +16,10 @@ class ColorAdmin(admin.ModelAdmin):
 class SizeAdmin(admin.ModelAdmin):
     list_display = ['id','size',]
     search_fields = ['size',]
+
+class ProductPictureInLine(admin.TabularInline):
+    model = ProductPicture
+    extra = 3   
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -39,4 +43,5 @@ class ProductAdmin(admin.ModelAdmin):
         'price',
     ]
     list_per_page = 10
+    inlines = [ProductPictureInLine,]
     
