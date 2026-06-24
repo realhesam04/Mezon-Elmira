@@ -28,6 +28,7 @@ class ProductAdmin(admin.ModelAdmin):
         'id',
         'title',
         'product_picture',
+        'inventory_status',
         'category',
         'inventory',
         'price',
@@ -56,4 +57,16 @@ class ProductAdmin(admin.ModelAdmin):
         return "-"
     
     product_picture.short_description = "Image"
+
+    def inventory_status(self, obj):
+
+        if obj.inventory < 5:
+            return format_html(
+                '<span style="color:red;font-weight:bold;">{}</span>',
+                obj.inventory
+            )
+
+        return obj.inventory
+
+    inventory_status.short_description = "Inventory"
     
