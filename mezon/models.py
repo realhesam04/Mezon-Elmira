@@ -12,6 +12,9 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse("category_products", kwargs={"pk": self.pk})
     
+    class Meta:
+        ordering = ['title']
+    
     
 
 class Color(models.Model):
@@ -43,6 +46,9 @@ class Product(models.Model):
     
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"pk": self.pk})
+    
+    class Meta:
+        ordering = ['-created_at']
 
 class ProductPicture(models.Model):
     product = models.ForeignKey(Product ,on_delete=models.CASCADE, related_name='pictures')

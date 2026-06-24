@@ -59,7 +59,6 @@ class ProductAdmin(admin.ModelAdmin):
                 obj.image.url
             )
         return "-"
-    
     product_picture.short_description = "Image"
 
     def inventory_status(self, obj):
@@ -71,6 +70,6 @@ class ProductAdmin(admin.ModelAdmin):
             )
 
         return obj.inventory
-
     inventory_status.short_description = "Inventory"
     
+   
