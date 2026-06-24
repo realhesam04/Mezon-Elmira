@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 
 from .models import Category, Color, Size, Product, ProductPicture
 
@@ -26,6 +27,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = [
         'id',
         'title',
+        'product_picture',
         'category',
         'inventory',
         'price',
@@ -44,4 +46,14 @@ class ProductAdmin(admin.ModelAdmin):
     ]
     list_per_page = 10
     inlines = [ProductPictureInLine,]
+
+    def product_picture(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" width="60" height="60" style="border-radius:8px;" />',
+                obj.image.url
+            )
+        return "-"
+    
+    product_picture.short_description = "Image"
     
