@@ -47,6 +47,8 @@ class ProductAdmin(admin.ModelAdmin):
     ]
     list_per_page = 10
     inlines = [ProductPictureInLine,]
+    
+    ordering = ['-created_at']
 
     def product_picture(self, obj):
         if obj.image:
