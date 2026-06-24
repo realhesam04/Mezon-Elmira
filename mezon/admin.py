@@ -40,6 +40,8 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = [
         'category',
         'created_at',
+        'color',
+        'size',
     ]
     list_editable = [
         'inventory',
