@@ -1,0 +1,397 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+درباره ما | مزون المیرا
+{% endblock %}
+
+{% block content %}
+
+<section class="about-hero">
+
+    <div class="container text-center">
+
+        <h1 class="display-4 fw-bold">
+            درباره مزون المیرا
+        </h1>
+
+        <p class="lead mt-3">
+            جایی که زیبایی، کیفیت و ظرافت در کنار هم قرار می‌گیرند.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container my-5">
+
+    <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+
+            <img src="{% static 'images/about.jpg' %}"
+                 class="img-fluid rounded-4 shadow-lg"
+                 alt="مزون المیرا">
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <h2 class="fw-bold mb-4">
+
+                داستان ما
+
+            </h2>
+
+            <p class="text-muted">
+
+                مزون المیرا با هدف ارائه لباس‌های مجلسی خاص،
+                باکیفیت و مطابق با جدیدترین ترندهای روز فعالیت خود را آغاز کرد.
+                ما باور داریم هر بانویی شایسته درخشیدن در مهم‌ترین لحظات زندگی خود است.
+
+            </p>
+
+            <p class="text-muted">
+
+                به همین دلیل تلاش می‌کنیم مجموعه‌ای از بهترین طراحی‌ها،
+                پارچه‌های باکیفیت و دوخت حرفه‌ای را در اختیار مشتریان خود قرار دهیم.
+
+            </p>
+
+            <a href="{% url 'product_list' %}"
+               class="btn btn-gold mt-3">
+
+                مشاهده محصولات
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container my-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold">
+
+            چرا مزون المیرا؟
+
+        </h2>
+
+        <p class="text-muted">
+
+            دلایلی که مشتریان ما را انتخاب می‌کنند.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="icon">
+
+                    ✨
+
+                </div>
+
+                <h4>
+
+                    طراحی خاص
+
+                </h4>
+
+                <p>
+
+                    لباس‌هایی با طراحی مدرن و منحصر به فرد برای سلیقه‌های خاص.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="icon">
+
+                    💎
+
+                </div>
+
+                <h4>
+
+                    کیفیت ممتاز
+
+                </h4>
+
+                <p>
+
+                    استفاده از بهترین متریال و دوخت حرفه‌ای برای دوام بیشتر.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="icon">
+
+                    ❤️
+
+                </div>
+
+                <h4>
+
+                    رضایت مشتری
+
+                </h4>
+
+                <p>
+
+                    رضایت و اعتماد مشتریان، مهم‌ترین سرمایه مزون المیرا است.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="statistics my-5">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+
+                <h2 class="number">
+
+                    +500
+
+                </h2>
+
+                <p>
+
+                    مشتری راضی
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h2 class="number">
+
+                    +300
+
+                </h2>
+
+                <p>
+
+                    لباس خاص
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h2 class="number">
+
+                    +5
+
+                </h2>
+
+                <p>
+
+                    سال تجربه
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h2 class="number">
+
+                    ★★★★★
+
+                </h2>
+
+                <p>
+
+                    کیفیت خدمات
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cta-section">
+
+    <h2 class="fw-bold">
+
+        آماده انتخاب لباس رویایی خود هستید؟
+
+    </h2>
+
+    <p class="mt-3">
+
+        جدیدترین محصولات مزون را مشاهده کنید.
+
+    </p>
+
+    <a href="{% url 'product_list' %}"
+
+       class="btn btn-gold btn-lg mt-3">
+
+        مشاهده محصولات
+
+    </a>
+
+</section>
+
+{% endblock %}
+
+
+
+{% block extra_css %}
+
+<style>
+
+.about-hero{
+
+    background:#111;
+
+    color:white;
+
+    padding:90px 20px;
+
+    border-radius:25px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,169,106,.15),
+        rgba(17,17,17,1) 70%
+    );
+
+}
+
+.btn-gold{
+
+    background:#c8a96a;
+
+    color:white;
+
+    border:none;
+
+}
+
+.btn-gold:hover{
+
+    background:#b69458;
+
+    color:white;
+
+}
+
+.feature-card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.statistics{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:70px 30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.number{
+
+    color:#c8a96a;
+
+    font-size:2.8rem;
+
+    font-weight:bold;
+
+}
+
+.cta-section{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:80px 30px;
+
+    border-radius:25px;
+
+    margin-top:80px;
+
+}
+
+</style>
+
+{% endblock %}
