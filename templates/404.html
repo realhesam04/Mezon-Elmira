@@ -1,0 +1,216 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+404 | صفحه پیدا نشد
+{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+
+    <div class="text-center">
+
+        <h1 class="error-code">
+
+            404
+
+        </h1>
+
+        <h2 class="fw-bold mt-3">
+
+            صفحه مورد نظر پیدا نشد
+
+        </h2>
+
+        <p class="lead text-light mt-4">
+
+            ممکن است آدرس را اشتباه وارد کرده باشید
+            یا این صفحه دیگر وجود نداشته باشد.
+
+        </p>
+
+        <a href="{% url 'home' %}"
+           class="btn btn-gold btn-lg mt-4">
+
+            بازگشت به صفحه اصلی
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="container my-5">
+
+    <div class="row text-center g-4">
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    🏠
+
+                </div>
+
+                <h4>
+
+                    صفحه اصلی
+
+                </h4>
+
+                <p>
+
+                    بازگشت به صفحه نخست مزون
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    👗
+
+                </div>
+
+                <h4>
+
+                    مشاهده محصولات
+
+                </h4>
+
+                <p>
+
+                    جدیدترین لباس‌های مزون را ببینید.
+
+                </p>
+
+                <a href="{% url 'product_list' %}"
+                   class="btn btn-outline-dark mt-2">
+
+                    محصولات
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    📞
+
+                </div>
+
+                <h4>
+
+                    تماس با ما
+
+                </h4>
+
+                <p>
+
+                    اگر مشکلی وجود دارد با ما در ارتباط باشید.
+
+                </p>
+
+                <a href="{% url 'contact_us' %}"
+                   class="btn btn-outline-dark mt-2">
+
+                    تماس
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+.error-code{
+
+    font-size:9rem;
+
+    color:#c8a96a;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 5px 25px rgba(200,169,106,.35);
+
+}
+
+.btn-gold{
+
+    background:#c8a96a;
+
+    color:white;
+
+    border:none;
+
+}
+
+.btn-gold:hover{
+
+    background:#b69458;
+
+    color:white;
+
+}
+
+.feature-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    height:100%;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.feature-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+</style>
+
+{% endblock %}
