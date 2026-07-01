@@ -9,8 +9,10 @@ def home(request):
     return render(request, 'home.html', context={'products':products, 'categories':categories})
 
 def about_us(request):
-
     return render(request,'about_us.html',)
+
+def contact_us(request):
+    return render(request, 'contact_us.html',)
 
 def product_list(reuqest):
     products = Product.objects.all()
