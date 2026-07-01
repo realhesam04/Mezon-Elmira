@@ -1,0 +1,376 @@
+{% extends '_base.html' %}
+
+{% block title %}
+تماس با ما | مزون المیرا
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+
+<section class="contact-hero text-center">
+
+    <h1 class="display-4 fw-bold">
+
+        تماس با مزون المیرا
+
+    </h1>
+
+    <p class="lead mt-3">
+
+        خوشحال می‌شویم پاسخگوی سوالات و پیشنهادات شما باشیم.
+
+    </p>
+
+</section>
+
+
+<!-- Contact Cards -->
+
+<section class="my-5">
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+
+            <div class="contact-card">
+
+                <div class="icon">
+
+                    📞
+
+                </div>
+
+                <h4>
+
+                    تماس
+
+                </h4>
+
+                <p>
+
+                    05632730970
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="contact-card">
+
+                <div class="icon">
+
+                    📍
+
+                </div>
+
+                <h4>
+
+                    آدرس
+
+                </h4>
+
+                <p>
+
+                    بلوار دکتر مدبر عزیزی<br>
+
+                    خیابان امامت<br>
+
+                    بالاتر از خوابگاه امام رضا
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="contact-card">
+
+                <div class="icon">
+
+                    📷
+
+                </div>
+
+                <h4>
+
+                    اینستاگرام
+
+                </h4>
+
+                <p>
+
+                    @elmira_mezon_ferdows
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="contact-card">
+
+                <div class="icon">
+
+                    ✈️
+
+                </div>
+
+                <h4>
+
+                    تلگرام
+
+                </h4>
+
+                <p>
+
+                    t.me/Elmira_mezon_ferdows
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Form -->
+
+<section class="my-5">
+
+    <div class="row g-5 align-items-center">
+
+        <div class="col-lg-6">
+
+            <div class="form-box">
+
+                <h2 class="fw-bold mb-4">
+
+                    ارسال پیام
+
+                </h2>
+
+                <form>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            نام
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            ایمیل
+
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            موضوع
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+
+                            پیام
+
+                        </label>
+
+                        <textarea
+                            rows="6"
+                            class="form-control"></textarea>
+
+                    </div>
+
+                    <button
+                        class="btn btn-gold btn-lg w-100">
+
+                        ارسال پیام
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="map-box">
+
+                <h2 class="fw-bold mb-4">
+
+                    موقعیت مزون
+
+                </h2>
+
+                <iframe
+
+                    src="https://maps.google.com/maps?q=Ferdows&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+                    width="100%"
+
+                    height="420"
+
+                    style="border:0;border-radius:20px;"
+
+                    loading="lazy">
+
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+.contact-hero{
+
+    background:#111;
+
+    color:white;
+
+    padding:90px 20px;
+
+    border-radius:25px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,169,106,.15),
+        rgba(17,17,17,1) 70%
+    );
+
+}
+
+.contact-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.form-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.map-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.form-control{
+
+    border-radius:12px;
+
+    padding:12px;
+
+}
+
+.btn-gold{
+
+    background:#c8a96a;
+
+    color:white;
+
+    border:none;
+
+}
+
+.btn-gold:hover{
+
+    background:#b69458;
+
+    color:white;
+
+}
+
+</style>
+
+{% endblock %}
