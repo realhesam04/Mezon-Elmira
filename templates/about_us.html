@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<section class="about-hero">
+<section class="page-hero">
 
     <div class="container text-center">
 
@@ -284,16 +284,9 @@
 {% block extra_css %}
 
 <style>
-
 .about-hero{
 
-    background:#111;
-
-    color:white;
-
-    padding:90px 20px;
-
-    border-radius:25px;
+    min-height:50vh;
 
     background:
     radial-gradient(
@@ -301,6 +294,24 @@
         rgba(200,169,106,.15),
         rgba(17,17,17,1) 70%
     );
+
+    background-color:#111;
+
+    color:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
 
 }
 

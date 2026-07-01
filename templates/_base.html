@@ -65,6 +65,37 @@
         padding:40px 0;
     }
 
+    .page-hero{
+
+    min-height:50vh;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,169,106,.15),
+        rgba(17,17,17,1) 70%
+    );
+
+    background-color:#111;
+
+    color:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
 </style>
 
 {% block extra_css %}
@@ -152,6 +183,14 @@
         <a class="nav-link"
             href="{% url 'about_us' %}">
             درباره ما
+        </a>
+
+    </li>
+    <li class="nav-item">
+
+        <a class="nav-link"
+            href="{% url 'contact_us' %}">
+            تماس با ما
         </a>
 
     </li>
