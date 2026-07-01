@@ -15,20 +15,39 @@
 <p class="text-muted">
     جدیدترین مدل‌های مزون
 </p>
+<div class="search-box mb-5">
+
+    <form method="GET"
+          action="{% url 'product_list' %}">
+
+        <div class="input-group">
+
+            <input
+                type="text"
+                name="q"
+                class="form-control search-input"
+                placeholder="دنبال چه لباسی می‌گردید؟"
+
+                value="{{ request.GET.q|default:'' }}">
+
+            <button
+                class="btn search-btn"
+                type="submit">
+
+                🔍 جستجو
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
 
 
 </div>
 
 <div class="row g-4">
-
-<form method="GET" action="{% url 'product_list' %}" class="d-flex">
-    {% csrf_token %}
-    <input type="text" name="q"
-    placeholder="جستجو محصول" 
-    class="form-control-rounded-pill me-2"
-    value={{ request.GET.q }}>
-    <button class="btn btn-outline-dark rounded-pill px-4" type="submit">جستجو</button>
-</form>
 
 {% if products %}
     {% for product in products %}
@@ -109,6 +128,63 @@
 .price{
     color:#c8a96a;
     font-weight:bold;
+}
+.search-box{
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+.search-input{
+
+    height:58px;
+
+    border-radius:40px 0 0 40px !important;
+
+    border:2px solid #c8a96a;
+
+    box-shadow:none;
+
+    font-size:1rem;
+
+    padding-right:25px;
+
+}
+
+.search-input:focus{
+
+    border-color:#c8a96a;
+
+    box-shadow:0 0 12px rgba(200,169,106,.35);
+
+}
+
+.search-btn{
+
+    background:#111;
+
+    color:white;
+
+    border:2px solid #111;
+
+    border-radius:0 40px 40px 0 !important;
+
+    padding:0 28px;
+
+    transition:.3s;
+
+}
+
+.search-btn:hover{
+
+    background:#c8a96a;
+
+    border-color:#c8a96a;
+
+    color:white;
+
 }
 
 </style>
