@@ -9,6 +9,8 @@ pillow = "*"
 python-decouple = "*"
 gunicorn = "*"
 whitenoise = "*"
+django-cloudinary-storage = "*"
+cloudinary = "*"
 
 [dev-packages]
 
