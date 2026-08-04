@@ -2,8 +2,12 @@
 
 pip install -r requirements.txt
 
+echo "========== PROJECT FILES =========="
+pwd
+ls -la
+
 echo "========== MEDIA =========="
-find media -type f
+ls -R media || echo "MEDIA DIRECTORY NOT FOUND"
 
 python manage.py collectstatic --noinput
 
