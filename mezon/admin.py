@@ -72,4 +72,7 @@ class ProductAdmin(admin.ModelAdmin):
         return obj.inventory
     inventory_status.short_description = "Inventory"
     
-   
+@admin.register(ProductPicture)
+class ProductPictureAdmin(admin.ModelAdmin):
+    list_display = ['product', 'image',]
+    
