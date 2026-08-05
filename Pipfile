@@ -11,6 +11,8 @@ gunicorn = "*"
 whitenoise = "*"
 django-cloudinary-storage = "*"
 cloudinary = "*"
+psycopg = {extras = ["binary"], version = "*"}
+dj-database-url = "*"
 
 [dev-packages]
 
