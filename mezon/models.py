@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 
+from cloudinary.models import CloudinaryField
+
 class Category(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -37,7 +39,7 @@ class Product(models.Model):
     size = models.ManyToManyField(Size)
     inventory = models.PositiveIntegerField()
     price = models.PositiveIntegerField()
-    image = models.ImageField(upload_to='covers/', blank=True)
+    image = CloudinaryField("image", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
@@ -52,7 +54,7 @@ class Product(models.Model):
 
 class ProductPicture(models.Model):
     product = models.ForeignKey(Product ,on_delete=models.CASCADE, related_name='pictures')
-    image = models.ImageField(upload_to='covers/', blank=True)
+    image = CloudinaryField("image", blank=True)
 
     def __str__(self):
         return f"{self.product.title}"
